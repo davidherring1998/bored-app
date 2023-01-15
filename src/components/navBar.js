@@ -21,36 +21,35 @@ function NavTabs({ currentPage, handlePageChange }) {
       <Navbar bg="dark" variant="dark" sticky="top" style={styles.bar}>
         <Container>
           <Navbar.Brand href="#" style={styles.name}>
-            {"The Bored App"}
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link
               style={styles.tab}
               href="#Home"
-              onClick={() => handlePageChange("Home")}
+              onClick={() => handlePageChange("News")}
               className={
-                currentPage === "Home" ? "nav-link active" : "nav-link"
+                currentPage === "News" ? "nav-link active" : "nav-link"
               }
             >
-              Home
+              News
             </Nav.Link>
             <Nav.Link
               href="#portfolio"
-              onClick={() => handlePageChange("Portfolio")}
+              onClick={() => handlePageChange("Pictures")}
               className={
-                currentPage === "Portfolio" ? "nav-link active" : "nav-link"
+                currentPage === "Pictures" ? "nav-link active" : "nav-link"
               }
             >
-              Portfolio
+              Pictures
             </Nav.Link>
             <Nav.Link
               href="#resume"
-              onClick={() => handlePageChange("Resume")}
+              onClick={() => handlePageChange("Random")}
               className={
-                currentPage === "Resume" ? "nav-link active" : "nav-link"
+                currentPage === "Random" ? "nav-link active" : "nav-link"
               }
             >
-              Resume
+              Random
             </Nav.Link>
             <Nav.Link
               href="#contact"

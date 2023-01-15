@@ -1,22 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/container.css";
-import "../../styles/homePage.css"
+import "../../styles/homePage.css";
 import { useState, useEffect } from "react";
-
-// a64790d61c1f816b25f98560a9b38169
 
 function Section() {
   const [data, setData] = useState(null);
-  const [btn, setBtn] = useState(null)
-
-  const btnHandler = () => {
-    setBtn(true)
-  }
+  const [btn, setBtn] = useState(null);
 
   useEffect(() => {
     fetch(
-      "http://api.mediastack.com/v1/news?access_key=797193499c5aaf4c93ce6c9a861591e7&languages=en&countries=us&limit=25"
+      "https://api.mediastack.com/v1/news?access_key=797193499c5aaf4c93ce6c9a861591e7&languages=en&countries=us&limit=30"
     )
       .then((res) => {
         if (res.ok) {
@@ -33,24 +27,26 @@ function Section() {
 
   return (
     <div>
-      <h2 className="header">Headlines</h2>
+      <h2 className="header" id="header">BoredApp</h2>
       <div className="boxContainer">
         <div>
           {data &&
             data.map((newsData) => {
               return (
-                <div className="box" key={newsData.url}>
-                  {newsData.description}
+                <div className="box-l" key={newsData.url}>
+                  <h3 className="newsHeaders">{newsData.title}</h3>
+                  <img src={newsData.image} alt="" className="images" />
+                  <p className="description">{newsData.description}</p>
                   <a href={newsData.url} target="blank">
                     {" "}
-                    <button className="btn">View</button>
+                    <button className="btn">Read More</button>
                   </a>
                 </div>
               );
             })}
         </div>
       </div>
-      <button onChange={btnHandler} className="btn">More</button>
+      <button className="btn"><a href="#header">Back to top</a></button>
     </div>
   );
 }

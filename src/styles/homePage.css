@@ -4,6 +4,7 @@
     font-size: 2.5rem;
     font-family:monospace;
     text-decoration: underline;
+    color:   #d9534f;
 }
 
 .btn{
@@ -15,8 +16,13 @@
     background:  #d9534f;
     color: white;
     cursor: pointer;
+    text-decoration: none;
 }
 .btn:hover{
     background-color: #3B71CA;
     color: #FBFBFB;
+}
+
+.newsHeaders{
+    color: #3B71CA;
 }
